@@ -1,0 +1,143 @@
+<div class="ritekhela-wrapper">
+  <!--// Header //-->
+  <header id="ritekhela-header" class="ritekhela-header-one">
+    <!--// Main Header //-->
+    <div class="ritekhela-main-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <a routerLink="/home" routerLinkActive="active" class="ritekhela-logo text-white"
+              >FootBall League</a
+            >
+            <div class="ritekhela-right-section">
+              <div class="ritekhela-navigation">
+                <span class="ritekhela-menu-link">
+                  <span class="menu-bar"></span>
+                  <span class="menu-bar"></span>
+                  <span class="menu-bar"></span>
+                </span>
+                <nav id="main-nav">
+                  <ul id="main-menu" class="sm sm-blue">
+                    <li class="active"><a routerLink="/home" routerLinkActive="active">Home</a></li>
+                    <li *ngIf="!showLogin" style="cursor: pointer">
+                      <a (click)="logout()" class="text-white">Logout</a>
+                    </li>
+                    <li *ngIf="showLogin">
+                      <a
+                        href="#"
+                        data-toggle="modal"
+                        data-target="#ritekhelamodalcenter"
+                        ><i class="fa fa-user-alt"></i> Login</a
+                      >
+                    </li>
+                    <li *ngIf="showLogin">
+                      <a
+                        href="#"
+                        data-toggle="modal"
+                        data-target="#ritekhelamodalrg"
+                        ><i class="fa fa-sign-in-alt"></i> Signup</a
+                      >
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--// Main Header //-->
+  </header>
+  <!--// Header //-->
+</div>
+
+<!--// Login ModalBox //-->
+<div class="loginmodalbox modal fade" id="ritekhelamodalcenter" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body ritekhela-bgcolor-two">
+        <h5 class="modal-title">Login To Your Account</h5>
+        <a
+          href="#"
+          class="close ritekhela-bgcolor-two"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="fa fa-times"></i>
+        </a>
+        <form
+          class="loginmodalbox-search"
+          [formGroup]="loginForm"
+          (ngSubmit)="onLoginSubmit()"
+        >
+          <input
+            type="email"
+            class="form-control"
+            required
+            formControlName="email"
+            placeholder="Enter Email"
+          />
+          <br /><br />
+          <input
+            type="password"
+            class="form-control"
+            required
+            formControlName="password"
+            placeholder="Type Here Password"
+          />
+          <br /><br />
+          <button type="submit" class="ritekhela-bgcolor px-4">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--// Login ModalBox //-->
+<div class="loginmodalbox modal fade" id="ritekhelamodalrg" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body ritekhela-bgcolor-two">
+        <h5 class="modal-title">Sign Up Now</h5>
+        <a
+          href="#"
+          class="close ritekhela-bgcolor-two"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="fa fa-times"></i>
+        </a>
+        <form
+          class="loginmodalbox-search"
+          [formGroup]="signUpForm"
+          (ngSubmit)="onSignUpSubmit()"
+        >
+        <input
+            type="text"
+            class="form-control"
+            required
+            formControlName="Name"
+            placeholder="Enter Name"
+          />
+          <input
+            type="email"
+            class="form-control"
+            required
+            formControlName="email"
+            placeholder="Enter Email"
+          />
+          <br /><br />
+          <input
+            type="password"
+            class="form-control"
+            required
+            formControlName="password"
+            placeholder="Type Here Password"
+          />
+          <br /><br />
+          <button type="submit" class="ritekhela-bgcolor px-4">Signups</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

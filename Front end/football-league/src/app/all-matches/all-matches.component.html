@@ -1,0 +1,54 @@
+<h1 class="text-center">UpComing Matches</h1>
+  <div class="ritekhela-main-content">
+    <!--// Main Section //-->
+    <div class="ritekhela-main-section ritekhela-fixture-list-full">
+      <div class="container">
+        <div class="row">
+          <!--// Full Section //-->
+          <div class="col-md-12">
+            <div class="ritekhela-fixture ritekhela-modren-fixture">
+              <ul class="row">
+                <li class="col-md-6" *ngFor="let match of matches">
+                  <div class="ritekhela-modren-fixture-wrap">
+                    <div class="ritekhela-modren-fixture-text">
+                      <div class="ritekhela-modren-team-one">
+                        <figure></figure>
+                        <section>
+                          <h6>{{match.team1}}</h6>
+                        </section>
+                        <span></span>
+                      </div>
+                      <div class="ritekhela-modren-match-text">
+                        <h5>Pool Match </h5>
+                        <time datetime="2008-02-14 20:00"
+                          >{{match.dateAndTime}}</time
+                        >
+                        <div class="clearfix"></div>
+                        <span>VS</span>
+                        <h6>{{match.location}}</h6>
+                        <a href="#" class="ticket-buy-btn" (click)="buyTicket(match.id)">Buy Ticket</a>
+                        <br>
+                        <br>
+                        <a href="#" class="ticket-buy-btn" (click)="cancelTicket(match.id)">Cancel Ticket</a>
+                      </div>
+                      <div class="ritekhela-modren-team-two">
+                        <figure></figure>
+                        <section>
+                          <h6>{{match.team2}}</h6>
+                          
+                        </section>
+                        <span></span>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+          <!--// Full Section //-->
+        </div>
+      </div>
+    </div>
+    <!--// Main Section //-->
+  </div>
